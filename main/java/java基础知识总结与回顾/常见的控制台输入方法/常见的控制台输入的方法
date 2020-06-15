@@ -1,0 +1,17 @@
+1.使用标准输入串System.in  一次只读入一个字节数据
+    char read =(char) System.in.read();
+    System.out.println("您的输入是："+read);
+
+
+
+2.使用Scanner取得一个字符串或一组数字
+
+
+
+
+3.使用BufferedReader取得含空格的输入
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in ));
+    String read = null;
+    System.out.println("输入数据：");
+    read = br.readLine();
+    System.out.println(read);
