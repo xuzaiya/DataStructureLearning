@@ -30,6 +30,22 @@ public class Greedy {
 
     }
 
+
+    private static Result getLeastCoins2(int target){
+        Result result = new Result();
+        result.datas = new ArrayList<>();
+        //异质coins是有序的
+        for (Integer coin : coins){
+            int count = target/coin;
+            for (int i =0;i<count;i++){
+                result.datas.add(coin);
+            }
+            //取余数
+            target = target%coin;
+        }
+        return result;
+    }
+
     private static Result getLeastCoins(int target){
         Result result = new Result();
         result.datas = new ArrayList<>();

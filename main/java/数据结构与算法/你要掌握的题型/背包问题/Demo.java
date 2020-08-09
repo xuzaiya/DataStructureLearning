@@ -16,6 +16,10 @@ public class Demo {
         int[] v = {12,10,20,15};//价值
         System.out.println(knapSack(w,v,5));
     }
+
+
+
+
     public static int knapSack(int[] w,int[]v,int C){
         int size = w.length;
         return solveKS(w,v,size-1,C);

@@ -21,6 +21,8 @@ public class Main2 {
 
     }
 
+
+
     public static String[] permutation(String s) {
         if(s == null) return new String[]{};
         boolean[] visited = new boolean[s.length()];

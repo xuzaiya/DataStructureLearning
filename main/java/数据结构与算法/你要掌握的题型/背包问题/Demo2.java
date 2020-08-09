@@ -15,13 +15,29 @@ public class Demo2 {
     public static void main(String[] args) {
         int[] w = {2,1,3,2};//重量
         int[] v = {12,10,20,15};//价值
-        System.out.println(knapSack(w,v,5));
+        System.out.println(knapSack3(w,v,w.length-1,5));
     }
+
+    public static int knapSack3(int[]w,int[]v,int index,int Capacity){
+        if(index<0 || Capacity<=0){
+            return 0;
+        }
+        //不放第index 个物品
+        int res = knapSack3(w,v,index-1,Capacity);
+        if(w[index]<=Capacity){
+            res = Math.max(res,v[index]+knapSack3(w,v,index-1,Capacity-w[index]));
+        }
+        return res;
+    }
+
     public static int knapSack(int[] w,int[]v,int C){
         int size = w.length;
         memo = new int[size][C+1];
         return solveKS(w,v,size-1,C);
     }
+
+
+
 
     private static int solveKS(int[]w,int[]v,int index,int capacity){
         //基准条件，如果索引无效或容量不足，直接返回当前价值0

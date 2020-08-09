@@ -35,6 +35,30 @@ public class Main2 {
 
     }
 
+    public static void permutation2(char[]data,int beginIndex,HashSet<String>result){
+        if (beginIndex == data.length-1){
+            result.add(new String(data));
+        }else{
+            for (int i=beginIndex;i<data.length;i++){
+                //如果第i个元素开始的元素相同，则两个元素不交换
+                if (i!=beginIndex && data[i] == data[beginIndex]){
+                    continue;
+                }
+                //交换
+                char temp = data[beginIndex];
+                data[beginIndex] = data[i];
+                data[i] = temp;
+                permutation(data,beginIndex+1,result);
+                //再换回来
+                temp = data[beginIndex];
+                data[beginIndex] = data[i];
+                data[i] = temp;
+
+
+            }
+        }
+    }
+
     public static void permutation(char[] data, int beginIndex, HashSet<String> result) {
         if (beginIndex == data.length-1){
             result.add(new String(data));
