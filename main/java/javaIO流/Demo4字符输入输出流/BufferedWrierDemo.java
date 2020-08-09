@@ -41,7 +41,7 @@ public class BufferedWrierDemo {
 		bfw.newLine();
 		bfw.flush();
 
-		bfw.write("大家都好");
+		//bfw.write("大家都好");
 		bfw.flush();
 
 		bfw.close();

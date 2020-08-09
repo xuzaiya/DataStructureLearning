@@ -113,4 +113,23 @@ public class BinarySearch {
         }
         return -1;
     }
+
+
+    public static int binSearch5(int[]arr,int key){
+        int mid = arr.length/2;
+        int start  = 0 ;
+        int end = arr.length-1;
+        while(start<=end){
+            mid = (end-start)/2+start;
+            if(key == arr[mid]){
+                return mid;
+
+            }else if(key<arr[mid]) {
+                end = mid - 1;
+            }else{
+                start = mid +1;
+            }
+        }
+        return  -1;
+    }
 }

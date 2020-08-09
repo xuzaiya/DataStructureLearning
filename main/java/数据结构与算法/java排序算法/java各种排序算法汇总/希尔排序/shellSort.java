@@ -1,6 +1,19 @@
 package 数据结构与算法.java排序算法.java各种排序算法汇总.希尔排序;
 
 import java.util.Arrays;
+/**
+ * 希尔排序也称递减增量排序算法，是插入排序的一种改进版本，
+ *先将整个待排元素序列分割成若干个子序列（由相隔某个“增量”的元素组成的）分别进行直接插入排序，
+ * 然后依次缩减增量再进行排序，待整个序列中的元素基本有序（增量足够小）时，再对全体元素进行一次直接插入排序
+ *
+ * 时间复杂度：O(nlog2为底n)或者O(n^1.25)
+ * 空间复杂度：由于希尔排序，我们在算法排序过程中，需要一个增量元素，所以空间复杂度为1
+ * 稳定性：由于多次插入排序，我们知道一次插入排序是稳定的，不会改变相同元素的相对顺序，但在不同的插入排序过程中，
+ * 相同的元素可能在各自的插入排序中移动，最后其稳定性就会被打乱，所以shell排序是不稳定的。
+ */
+
+
+
 
 public class shellSort {
 
@@ -221,6 +234,93 @@ public class shellSort {
                 arr[j+gap]  = value;
             }
             gap/=2;
+        }
+    }
+
+    //希尔排序
+    public static void shellSort14(int[]arr){
+        if (arr ==null || arr.length<=1)return ;
+        int gap = arr.length/2;
+        while(gap!=0){
+            for (int i=gap;i<arr.length;i++){
+                int j = i-gap;
+                int value = arr[i];
+                for (;j>=0&&arr[j]>value;j-=gap){
+                    arr[j+gap] = arr[j];
+                }
+                arr[j+gap] = value;
+            }
+            gap/=2;
+        }
+    }
+
+
+
+    //希尔排序
+    public static void shellSort15(int[]arr){
+        if(arr == null || arr.length<=1)return;
+        int gap = arr.length/2;
+        while(gap!=0){
+            for (int i=gap;i<arr.length;i++){
+                int j = i-gap;
+                int vlaue = arr[i];
+                for (;j>=0&&arr[j]>vlaue;j-=gap){
+                    arr[j+gap] = arr[j];
+                }
+                arr[j+gap] = vlaue;
+            }
+            gap/=2;
+
+        }
+    }
+
+    public static void shellSort17(int[]arr){
+        if(arr == null || arr.length<=1)return ;
+        int gap = arr.length/2;
+        while(gap!=0){
+            for(int i=gap;i<arr.length;i++){
+                int j = i-gap;
+                int value = arr[i];
+                for(;j>=0&&arr[j]>value;j-=gap){
+                    arr[j+gap] = arr[j];
+                }
+                arr[j+gap] = value;
+            }
+            gap /=2;
+        }
+
+    }
+
+    public static void shellSort18(int[]arr){
+        if (arr == null || arr.length<=1)return ;
+        int gap = arr.length/2;
+        while(gap!=0){
+            for (int i=gap;i<arr.length;i++){
+                int j = i-gap;
+                int value = arr[i];
+                for (;j>=0&& arr[j]>value;j-=gap){
+                    arr[j+gap] = arr[j];
+                }
+                arr[j+gap] = value;
+            }
+            gap/=2;
+        }
+    }
+
+    public static void shellSort19(int[]arr){
+        if(arr == null || arr.length <=1)return;
+        int gap = arr.length/2;
+        while(gap!=0){
+            for(int i=gap;i<arr.length;i++){
+                int j = i-gap;
+                int value = arr[i];
+                for(;j>=0&&arr[j]>value;j-=gap){
+                    arr[j+gap] = arr[j];
+                }
+                arr[j+gap] = value;
+            }
+            gap/=2;
+
         }
     }
 

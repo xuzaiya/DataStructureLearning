@@ -7,7 +7,7 @@ import java.util.Arrays;
 快速排序（Quicksort）是对冒泡排序的一种改进。由C. A. R. Hoare在1962年提出。
 2、算法思想。
 
-通过一趟排序将要排序的数据分割成独立的两部分，其中一部分的所有数据都比另外一部分的所有数据都要小，然后再按此方法对这两部分数据分别进行快速排序，整个排序过程可以递归进行，以此达到整个数据变成有序序列。
+每次排序的时候设置一个基准点，将小于等于基准点的数全部放到基准点的左边，将大于等于基准点的数全部放到基准点的右边
 
 3、实现思路。
 
@@ -291,6 +291,84 @@ public class SortTest {
 
 
     }
+
+    //快速排序
+    public static void quickSort15(int[]arr,int left,int right){
+        int i,j,temp,t;
+        if(left>right)return ;
+        i = left;
+        j = right;
+        temp = arr[left];
+        while(i!=j){
+            while(arr[j]>=temp&& i<j){j--;}
+            while(arr[i]<=temp&& i<j){i++;}
+            if(i<j){
+                t =arr[i];arr[i] = arr[j];arr[j] = t;
+            }
+        }
+        arr[left] = arr[i];arr[i] = temp;
+        quickSort15(arr,left,i-1);
+        quickSort15(arr,i+1,right);
+    }
+
+    public static void quickSort16(int[]arr,int left,int right){
+        int i,j,t,temp;
+        if(left>right)return ;
+        i= left;
+        j = right;
+        temp = arr[left];
+        while(i!=j){
+            while(arr[j]>=temp&&i<j){j--;}
+            while(arr[i]<=temp&&i<j){i++;}
+            if(i<j){
+                t =arr[i];arr[i] = arr[j];arr[j] =t;
+            }
+        }
+        arr[left] = arr[i];arr[i] = temp;
+        quickSort16(arr,left,i-1);
+        quickSort16(arr,i+1,right);
+    }
+
+
+    public static void quickSort17(int[]arr,int left,int right){
+        int i,j,t,temp;
+        if (left>right)return ;
+        i = left;
+        j = right;
+        temp = arr[left];
+        while(i!=j){
+            while(arr[j]>=temp&&i<j){j--;}
+            while(arr[i]<=temp&&i<j){i++;}
+            if (i<j){
+                t=arr[i];arr[i]=arr[j];arr[j] =t;
+            }
+        }
+        arr[left]=arr[i];arr[i] = temp;
+        quickSort17(arr,left,i-1);
+        quickSort17(arr,i+1,right);
+    }
+
+    public static void quickSort18(int []arr,int left,int right){
+        int i,j,temp,t;
+        if(left>right)return ;
+        i = left;
+        j = right;
+        temp =arr[left];
+        while(i!=j){
+            while(arr[j]>=temp && i<j){j--;}
+            while(arr[i]<=temp && i<j){i++;}
+            if(i<j){
+                t = arr[i];
+                arr[i] = arr[j];
+                arr[j] = t;
+            }
+        }
+        arr[left] = arr[i];arr[i] = temp;
+        quickSort18(arr,left,i-1);
+        quickSort18(arr,i+1,right);
+    }
+
+
 
 
 

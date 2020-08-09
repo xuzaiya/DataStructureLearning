@@ -75,6 +75,33 @@ public class SingleLinkedList {
         return true;
     }
 
+    //删除指定元素的节点，删除成功返回true
+    public boolean delete2(Object value){
+        if (size == 0){
+            return false;
+        }
+        Node current = head;
+        Node previous = head;
+        while(current.data!=value){
+            if (current.next == null){
+                return false;
+            }else{
+                previous = current;
+                current = current.next;
+            }
+        }
+        //如果删除的节点是第一个节点
+        if(current == head){
+            head = current.next;
+            size--;
+        }else{
+            //删除的节点不是第一个
+            previous.next = current.next;
+            size--;
+        }
+        return true;
+    }
+
 
 
     // 判断链表是否为空

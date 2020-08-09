@@ -1,5 +1,7 @@
 package 数据结构与算法.java链表.java实现单链表之逆序;
 
+import 面试中遇到的手撕算法题.ListNode;
+
 public class SingleLinkedReverse {
 
     class Node{
@@ -38,16 +40,17 @@ public class SingleLinkedReverse {
 
 
     private static Node reverse(Node head) {
-        Node p1,p2 = null;
-        p1 = head;
-
-        while(head.next != null){
-            p2 = head.next;
-            head.next = p2.next;
-            p2.next = p1;
-            p1 = p2;
+        if(head == null)return head;
+        Node cur = head;
+        Node pre = null;
+        while(cur!=null){
+            Node next = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = next;
         }
-        return p2;
+        return pre;
+
     }
 
 }

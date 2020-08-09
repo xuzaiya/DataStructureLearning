@@ -25,7 +25,7 @@ public class PropertiesDemo {
 		pro.setProperty("name", "zhangsan");
 		pro.setProperty("age", "31");
 		pro.setProperty("email", "123456789@163.com");
-		FileWriter fw = new FileWriter("c:\\pro.properties");
+		FileWriter fw = new FileWriter("e:\\buffer.txt");
 		//键值对,存回文件,使用集合的方法store传递字符输出流
 		pro.store(fw, "");
 		fw.close();

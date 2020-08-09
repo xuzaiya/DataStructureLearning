@@ -164,6 +164,7 @@ public class SortTest {
             int temp = arr[i];
             while(j>=0&&arr[j]>temp){
                 arr[j+1] = arr[j];
+                j--;
             }
             arr[j+1] = temp;
         }
@@ -171,16 +172,83 @@ public class SortTest {
 
 
     //插入排序
-    private static void insetSort(int[]arr){
+    private static void insetSort11(int[]arr){
         for(int i=0;i<arr.length;i++){
             int j= i-1;
             int value = arr[i];
             while(j>=0&&arr[j]>value){
                 arr[j+1] = arr[j];
+                j--;
             }
             arr[j+1] = value;
         }
     }
+
+    //插入排顺序
+    private static void insertSort12(int[]arr){
+        for(int i=0;i<arr.length;i++){
+            int j=i-1;
+            int value = arr[i];
+            while(j>=0&&arr[j]>value){
+                arr[j+1] = arr[j];
+                j--;
+            }
+            arr[j+1] = value;
+        }
+    }
+
+    private static void insertSort13(int[]arr){
+        for(int i=0;i<arr.length;i++){
+            int j= i-1;
+            int value = arr[i];
+            while(j>=0&&arr[j]>value){
+                arr[j+1] = arr[j];
+                j--;
+            }
+            arr[j+1] = value;
+        }
+    }
+
+
+    private static void insertSort14(int[]arr){
+        for(int i=0;i<arr.length;i++){
+            int j = i-1;
+            int value = arr[i];
+            while(j>=0&&arr[j]>value){
+                arr[j+1] = arr[j];
+                j--;
+            }
+            arr[j+1] = value;
+        }
+    }
+
+
+    private static void insertSort15(int[]arr){
+        for (int i=0;i<arr.length;i++){
+            int j = i-1;
+            int value = arr[i];
+            while(j>=0&&arr[j]>value){
+                arr[j+1] = arr[j];
+                j--;
+            }
+            arr[j+1] = value;
+        }
+    }
+
+    private static void insertSort16(int[]arr){
+        for (int i=0;i<arr.length;i++){
+            int j= i-1;
+            int value = arr[i];
+            while(j>=0&& arr[j]>value){
+                arr[j+1] = arr[j];
+                j--;
+            }
+            arr[j+1] = value;
+        }
+    }
+
+
+
 
 
 

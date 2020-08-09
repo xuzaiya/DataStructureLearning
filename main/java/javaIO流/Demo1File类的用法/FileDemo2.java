@@ -9,7 +9,7 @@ import java.io.IOException;
  */
 public class FileDemo2 {
     public static void main(String[] args) throws IOException {
-        function();
+        function_1();
     }
     /*
      *  File类的删除功能
@@ -32,7 +32,7 @@ public class FileDemo2 {
      *  文件夹已经存在了,不在创建
      */
     public static void function_1(){
-        File file = new File("c:\\abc");
+        File file = new File("e:\\abc");
         boolean b = file.mkdirs();
         System.out.println(b);
     }
